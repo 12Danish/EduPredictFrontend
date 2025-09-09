@@ -1,8 +1,8 @@
-import Header from "../Components/Header";
-import HeroSection from "../Components/HeroSection";
-import PrivacyNotice from "../Components/Privacy";
-import FeaturesGrid from "../Components/Features";
-import UploadSection from "../Components/Upload";
+import Header from "../Components/HomePage/Header";
+import HeroSection from "../Components/HomePage/HeroSection";
+import PrivacyNotice from "../Components/HomePage/Privacy";
+import FeaturesGrid from "../Components/HomePage/Features";
+import UploadSection from "../Components/HomePage/Upload";
 import useUpload from "../CustomHooks/useUpload";
 import processStudentData from "../backendCom/processStudentData";
 import { useNavigate } from "react-router-dom";

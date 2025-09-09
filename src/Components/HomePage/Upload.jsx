@@ -3,7 +3,7 @@ import {
   columnRequirements,
   basicRequirements,
   sampleData,
-} from "../constants";
+} from "../../constants";
 const UploadSection = ({
   uploadedFile,
   dragActive,
