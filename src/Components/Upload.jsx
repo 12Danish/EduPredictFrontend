@@ -61,7 +61,7 @@ const UploadSection = ({
         {/* Sample CSV Download */}
         <div className="mb-8">
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-            <div className="flex items-center justify-between">
+            <div className="flex sm:flex-row flex-col gap-4 items-center justify-between">
               <div className="flex items-center space-x-3">
                 <div className="bg-blue-100 rounded-full p-2">
                   <Info className="h-5 w-5 text-blue-600" />
@@ -166,29 +166,33 @@ const UploadedFileDisplay = ({ uploadedFile, removeFile, onAnalyze }) => {
 
   return (
     <div className="mb-8">
-      <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="bg-green-100 rounded-full p-2">
+      <div className="bg-green-50 border border-green-200 rounded-xl p-4 sm:p-6">
+        {/* Mobile: Stack vertically, Desktop: Side by side */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-4 sm:space-y-0">
+          
+          {/* File info section */}
+          <div className="flex items-center space-x-3 min-w-0 flex-1">
+            <div className="bg-green-100 rounded-full p-2 flex-shrink-0">
               <BookOpen className="h-5 w-5 text-green-600" />
             </div>
-            <div>
-              <p className="font-semibold text-green-900">
+            <div className="min-w-0 flex-1">
+              <p className="font-semibold text-green-900 truncate text-sm sm:text-base">
                 {uploadedFile.name}
               </p>
-             
             </div>
           </div>
-          <div className="flex space-x-3">
+          
+          {/* Action buttons */}
+          <div className="flex flex-col xs:flex-row space-y-2 xs:space-y-0 xs:space-x-3 sm:ml-4 flex-shrink-0">
             <button
               onClick={removeFile}
-              className="text-red-600 hover:text-red-700 font-medium transition-colors"
+              className="text-red-600 hover:text-red-700 font-medium transition-colors text-center py-2 px-3 text-sm sm:text-base"
             >
               Remove
             </button>
             <button
               onClick={onAnalyze}
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-center text-sm sm:text-base whitespace-nowrap"
             >
               Analyze Data
             </button>
