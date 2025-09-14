@@ -1,13 +1,15 @@
-FROM node:22-alpine
+# Build stage
+FROM node:22-alpine AS build
 
 WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
 
-COPY package*.json .
-
-RUN npm install 
-
-COPY . .    
-
-EXPOSE 5173
-
-CMD ["npm", "run", "dev"]
+# Serve stage
+FROM nginx:alpine
+WORKDIR /usr/share/nginx/html
+COPY --from=build /app/dist .    # copy build files to nginx default dir
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
