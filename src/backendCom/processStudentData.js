@@ -3,9 +3,10 @@ import axios from "axios";
 const processStudentData = async (file) => {
   const formData = new FormData();
   formData.append("file", file);
+const backendUrl = import.meta.env.VITE_BACKEND_URL || "http://127.0.0.1:5000";
 
   try {
-    const res = await axios.post("http://127.0.0.1:5000/process_file", formData, {
+    const res = await axios.post(`${backendUrl}/process_file`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
