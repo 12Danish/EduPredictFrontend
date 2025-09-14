@@ -11,7 +11,7 @@ const processStudentData = async (file) => {
       },
     });
 
-    console.log("Backend response:", res.data);
+  
 
     // ✅ return both data and status
     return {

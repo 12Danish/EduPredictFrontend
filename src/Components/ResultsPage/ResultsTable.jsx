@@ -1,7 +1,7 @@
 import StudentRow from './StudentRow'
 
 const ResultsTable = ({ data }) => {
-  console.log(data)
+
   return (
     <div className="bg-white rounded-xl shadow-lg border border-slate-200 mb-8 overflow-hidden">
       <div className="px-6 py-4 border-b border-slate-200">

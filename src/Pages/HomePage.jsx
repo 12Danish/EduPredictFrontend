@@ -23,29 +23,29 @@ const HomePage = ({ setResult }) => {
 
   const handleAnalyze = async () => {
     // Add your analysis logic here
-    console.log("Analyzing file:", uploadedFile.name);
+
 
     setLoading(true);
-    console.log("Analyzing file:", uploadedFile.name);
+
 
     const response = await processStudentData(uploadedFile);
-    console.log("Response:", response);
+ 
     setResult(response); // save backend response
     if (response.status == 200) {
-      console.log("Navigating to results page");
+      
       navigate("/results")
     } else {
-      console.log("Navigating to error page");
+
       navigate("/error")
     }
 
     try {
       setLoading(true); // start loading
-      console.log("Analyzing file:", uploadedFile.name);
+    
 
       const response = await processStudentData(uploadedFile);
       setResult(response); // save backend response
-      console.log("Response:", response);
+   
     } catch (error) {
       console.error("Error analyzing file:", error);
     } finally {

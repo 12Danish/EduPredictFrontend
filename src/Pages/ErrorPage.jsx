@@ -4,8 +4,7 @@ import BackToHomeButton from "../Components/HomeButton"
 const ErrorPage = ({ result }) => {
   const navigate = useNavigate()
 
-  console.log("This is the error page")
-  console.log(result)
+
   
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">

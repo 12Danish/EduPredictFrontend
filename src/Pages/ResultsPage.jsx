@@ -8,7 +8,7 @@ const ResultsPage = ({ result }) => {
   const data = result?.data.final_df || [];
   const suggestions = result?.data.suggestions || "";
 
-  useEffect(()=>{console.log(data)},[data])
+
   // Calculate statistics
   const highRiskCount = data.filter((student) => student.Risk === 1).length;
   const lowRiskCount = data.length - highRiskCount;
